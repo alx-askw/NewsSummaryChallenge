@@ -13,7 +13,9 @@ function App() {
       setNewsData(RESULTS);
 
     } catch (err) {
-      console.log(err)
+      // console.log(err)
+      console.log("cannot reach server")
+      setNewsData([]);
     }
   }
 
@@ -24,7 +26,7 @@ function App() {
 
   return (
     <>
-      <h1>test 2222</h1>
+      <h1>DF Gazette</h1>
       {newsData.map(item => (
         <Headlines key={item.id} newsData={item}></Headlines>
       ))}
