@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types'
 
+const errorImg = '../assets/404cat.jpg';
+
 const Headlines = ({ newsData }) => {
-    console.log(newsData)
     return (
         <div>
-
+            <img src={newsData !== undefined ? newsData.fields.thumbnail : errorImg}></img>
             <h3>
-                {newsData.length > 0 ? newsData : <div>no stories</div>}
+                {newsData !== undefined ? newsData.webTitle : <div>no stories</div>}
             </h3>
         </div>
     )
 }
 
-// Headlines.propTypes = 
+// Headlines.propTypes =
 //     newsData: PropTypes.arrayOf(
 //         PropTypes.shape({
 //             id: PropTypes.string.isRequired,
