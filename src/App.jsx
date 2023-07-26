@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <h1>test 2222</h1>
-      <Headlines newsData={newsData}></Headlines>
+      {newsData.forEach(el => <Headlines key={el.id} newsData={el}></Headlines>)}
     </>
   )
 }
