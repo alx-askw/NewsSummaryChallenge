@@ -3,10 +3,15 @@ import PropTypes from 'prop-types'
 const Headlines = ({ newsData }) => {
     console.log(newsData);
 
-
+    const NEWSMAP = newsData.map((items) => {
+        return {
+            id: items.id,
+            webTitle: items.webTitle,
+        }
+    })
     return (
         <div>
-            <h3>{newsData[0]}</h3>
+            <h3></h3>
         </div>
     )
 }
