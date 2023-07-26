@@ -25,7 +25,9 @@ function App() {
   return (
     <>
       <h1>test 2222</h1>
-      {newsData.forEach(el => <Headlines key={el.id} newsData={el}></Headlines>)}
+      {newsData.map(item => (
+        <Headlines key={item.id} newsData={item}></Headlines>
+      ))}
     </>
   )
 }

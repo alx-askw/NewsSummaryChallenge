@@ -2,12 +2,11 @@ import PropTypes from 'prop-types'
 
 const Headlines = ({ newsData }) => {
     console.log(newsData)
-
     return (
         <div>
-            {newsData}
+
             <h3>
-                {listOfStories.length > 0 ? listOfStories : <div>no stories</div>}
+                {newsData.length > 0 ? newsData : <div>no stories</div>}
             </h3>
         </div>
     )
