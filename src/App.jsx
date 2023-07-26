@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Headlines from './components/Headlines';
+import Header from './components/Header';
 import axios from 'axios';
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
       setNewsData(RESULTS);
 
     } catch (err) {
-      // console.log(err)
       console.log("cannot reach server")
       setNewsData([]);
     }
@@ -26,10 +26,12 @@ function App() {
 
   return (
     <>
-      <h1>DF Gazette</h1>
-      {newsData.map(item => (
-        <Headlines key={item.id} newsData={item}></Headlines>
-      ))}
+      <div className='container'>
+        <Header></Header>
+        {newsData.map(item => (
+          <Headlines key={item.id} newsData={item}></Headlines>
+        ))}
+      </div>
     </>
   )
 }
