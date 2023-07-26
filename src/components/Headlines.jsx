@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types'
 
 const Headlines = ({ newsData }) => {
+
+    let listOfStories = [];
     newsData.forEach(element => {
-        console.log(element.type)
+        listOfStories.push(element.type)
     });
 
     return (
         <div>
             <h3>
-                { }
+                {listOfStories.length > 0 ? listOfStories : <div>no stories</div>}
             </h3>
         </div>
     )
