@@ -1,8 +1,11 @@
+// why doesnt this work :(
+import './Footer.css'
+
 const Footer = () => {
 
     return (
-        <div>
-            <h1 color={{ color: 'lightblue' }}>Copyright Digital Futures & Alex A</h1>
+        <div className='footerMain'>
+            &copy; DF Gazette & Alex A
         </div >
     )
 }

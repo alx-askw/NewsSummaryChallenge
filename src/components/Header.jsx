@@ -1,8 +1,10 @@
+import './Header.css'
+
 const Header = () => {
 
     return (
         <div>
-            <h1 color={{ color: 'lightblue' }}>DF Gazette</h1>
+            <h1 className='headerMain'> &#x269C; DF Gazette</h1>
         </div >
     )
 }
