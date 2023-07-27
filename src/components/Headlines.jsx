@@ -17,7 +17,7 @@ const Headlines = ({ newsData }) => {
                 {articles.map(newsObj => (
                     <div key={newsObj.id}>
                         <img className='img-fluid rounded mx-auto d-block' onClick={() => navigator(`/article/${addTrim(newsObj.id)}`)} src={newsObj.fields.thumbnail || errImg} />,
-                        <p className='text-center fs-2 col-md-4 mx-auto'>
+                        <p className='text-center fs-2 col-md-4 mx-auto' onClick={() => navigator(`/article/${addTrim(newsObj.id)}`)} >
                             {newsObj.webTitle || <div>Missing Headline!</div>}
                         </p>
                     </div>

@@ -26,9 +26,15 @@ const Article = ({ newsData }) => {
     return (
         <>
             <div>
+                <img className='img-fluid rounded mx-auto d-block w-100 h-75' src={newsToshow.fields.thumbnail || errImg} />
+                <br />
                 <h1 className="ArticleMain">
                     {newsToshow.webTitle}
                 </h1>
+                <br />
+                <p className="ArticleParagraph">
+                    {newsToshow.fields.bodyText}
+                </p>
 
             </div>
         </>
@@ -36,3 +42,4 @@ const Article = ({ newsData }) => {
 }
 
 export default Article
+

@@ -17,7 +17,7 @@ function App() {
 
   const getData = async () => {
     try {
-      const getNewsData = await axios.get(MOCKDATA);
+      const getNewsData = await axios.get(GUARDIANAPI);
 
       const RESULTS = getNewsData.data.response.results;
       setNewsData(RESULTS);
@@ -31,6 +31,7 @@ function App() {
 
   useEffect(() => {
     getData();
+    // window.scrollTo(0, 0) https://stackoverflow.com/questions/33188994/scroll-to-the-top-of-the-page-after-render-in-react-js
   }, [])
 
 
