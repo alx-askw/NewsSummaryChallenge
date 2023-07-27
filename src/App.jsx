@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import Headlines from './components/Headlines';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Article from './components/Article';
 import axios from 'axios';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 //for switching between links - this could/will be replaced by envs
 //as of the current testing, it seems like it makes a lot of network calls | be careful with guardian api
@@ -26,20 +28,23 @@ function App() {
     }
   }
 
+
   useEffect(() => {
     getData();
   }, [])
 
 
   return (
+
     <>
       <div className='container'>
         <Header></Header>
         <div className='row'>
-          {newsData.map(item => (
-            <Headlines key={item.id} newsData={item} ></Headlines> //probably have to worry about on click per article here
-          ))}
         </div>
+        <Routes>
+          <Route path='/' element={<Headlines newsData={newsData} />} />
+          <Route path='/article/:id' element={<Article newsData={newsData} />} />
+        </Routes>
         <Footer></Footer>
       </div>
     </>
