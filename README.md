@@ -1,5 +1,43 @@
 # News Summary Challenge
 
+### Submission Notes
+
+- My component hierarchy goes as follows:
+    - App
+        - Header
+        - Headlines
+            - Image
+            - Headline
+        - Article
+            - Image
+            - Headline
+            - Body of text
+        - Footer
+        
+
+- My site is being hosted on Netlify: https://transcendent-syrniki-ffff82.netlify.app/
+- I have used bootstrap within this assignment, and thus it should be able to viewed on a phone/smaller device and display accordingly
+
+- You can click on the images or the headline text to go into an article. By pressing the header, it should take you back to the headlines page
+
+- You can try removing the API link to see what happens when it doesn't get anything back from a GET request (implementing this did make a line in the code quite long) 
+
+- I had attempted to test everything in this project but I still an not fully confident on how to test properly, specifically how to mock the entire application and have it work with mock data without trying to get data from an api .
+    - I have written 2 tests:
+        -1. To check whether or not the axios get is called correctly (I had to move my axios.get to its own util file to be able to test this)
+        -2. Check the / route in regards to it rendering something I expect to see on the page (my error fallback not real data) 
+    - Given more time to write and revise I would have tested more thoroughly, but testing is so much harder than production code!
+    - The test files that exist do have some commented out attempts but hopefully since it's mainly React doing it's thing I shouldn't have to test it 
+
+- I attempted to have the page scroll back to the top on a re-render, using useEffect(), but it only seems to work on certain pages 
+
+- As of the submission, I have not implemented environment variables but rather use two constants which can be passed depending on whether you want to use the Guardian or Mock data
+    - To run the program is will be 'npm run dev'
+- There are some files which were more help for the development rather than for uploading, these include: 
+    - 'guardianMockData.json'
+    - 'guardianTestGrab.js'
+
+- For where I had to look things up/search around for answers, I have made a markdown file called 'references' where I refer to the sources I have used
 ### Task
 
 You'll test-drive a single page application in React that send requests to the Guardian API to get Headline and Article data and display them. 
